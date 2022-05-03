@@ -29,19 +29,19 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
                 max_prob = max_trans_prob * emit_p[state][obs[t]]
                 V[t][state] = {"prob": max_prob, "prev": prev_state_selected}
 
-        opt = []
-        max_prob = 0.0
-        best_state = None
+    opt = []
+    max_prob = 0.0
+    best_state = None
 
-        for state, data in V[-1].items():
-            if data["prob"] > max_prob:
-                max_prob = data["prob"]
-                best_state = state
-        opt.append(best_state)
-        prev = best_state
+    for state, data in V[-1].items():
+        if data["prob"] > max_prob:
+            max_prob = data["prob"]
+            best_state = state
+    opt.append(best_state)
+    prev = best_state
 
-        for t in range(len(V) - 2, -1, -1):
-            opt.insert(0, V[t + 1][prev]["prev"])
-            prev = V[t + 1][prev]["prev"]
+    for t in range(len(V) - 2, -1, -1):
+        opt.insert(0, V[t + 1][prev]["prev"])
+        prev = V[t + 1][prev]["prev"]
 
-        return opt
+    return opt
