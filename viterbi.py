@@ -1,12 +1,12 @@
 def viterbi(obs, states, start_p, trans_p, emit_p):
     '''
     https://en.wikipedia.org/wiki/Viterbi_algorithm
-    :param obs:
-    :param states:
-    :param start_p:
-    :param trans_p:
-    :param emit_p:
-    :return:
+    :param obs: Observations at each checkpoint t (In this case, the "sentence")
+    :param states: The possible states of our system
+    :param start_p: The starting probability
+    :param trans_p: Transition probabilities from a state to another state
+    :param emit_p: Emissions probabilities to an observation given a current state
+    :return: a single "path" through state space representing the tagged POS in order
     '''
     V = [{}]
 
