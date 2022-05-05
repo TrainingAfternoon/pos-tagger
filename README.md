@@ -9,6 +9,10 @@ What we need to deliver this lab
 * Data cleaning procedure
   * Unify case
   * Do we keep apostrophes, etc
+  * Stop words
+  * Ignore/Expand abbreviations
+  * Upper/Lower case
+  * Assume proper spelling and proper sentence structure
 * Finish transition / emission probability counting for N-grams in NOTEBOOK
 * Implement POS tagging in NOTEBOOK
 * Implement finished model in `hmm_pos_tagger`
