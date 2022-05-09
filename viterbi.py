@@ -9,7 +9,6 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
     :return: a single "path" through state space representing the tagged POS in order
     '''
     V = [{}]
-
     for state in states:
         V[0][state] = {"prob": start_p[state] * emit_p[state][obs[0]], "prev": None}
 
