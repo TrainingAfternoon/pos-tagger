@@ -13,9 +13,7 @@ What we need to deliver this lab
   * Ignore/Expand abbreviations
   * Upper/Lower case
   * Assume proper spelling and proper sentence structure
-* Finish transition / emission probability counting for N-grams in NOTEBOOK
-* Implement POS tagging in NOTEBOOK
-* Implement finished model in `hmm_pos_tagger`
+* Ensure that `hmm-pos-tagger` offers N-gram support for variable N
 * Presentation
   * Script + power point
     * Introduce algorithm
