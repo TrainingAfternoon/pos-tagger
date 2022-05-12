@@ -45,7 +45,7 @@ class PosTagger:
                 continue
             viterbi_tag[tag] = self.cpd_tags[self.start_tag].prob(tag) * self.cpd_tag_words[tag].prob(sample[0])
             viterbi_backpointer[tag] = self.start_tag
-        print(viterbi_tag)
+
         viterbi_main = [viterbi_tag]
         backpointer_main = [viterbi_backpointer]
 
@@ -84,11 +84,9 @@ class PosTagger:
             curr_best = backpointer[curr_best]
 
         best_tag_seq.reverse()
-        print(sample)
         return best_tag_seq[1:-1]
 
     def predict(self, sample):
-        print(sample)
         return self._viterbi(sample)
 
     def get_states(self):
